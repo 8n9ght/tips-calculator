@@ -1,44 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script async src="./scripts/main.js"></script>
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="title">Splitter</h1>
+      </header>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+      <div class="content">
+        <article class="bill">
+          <h3 class="bill__heading">Bill</h3>
+          <span class="bill__input">
+            <img
+              src="./images/icon-dollar.svg"
+              alt="bill amount input, dollar sign"
+            />
+            <input type="text" name="billAmount" />
+          </span>
+        </article>
 
-  Bill
+        <article class="selector">
+          <h3 class="selector__heading">Select Tip %</h3>
+          <article class="amounts">
+            <p class="amounts__el">5%</p>
+            <p class="amounts__el">10%</p>
+            <p class="amounts__el">15%</p>
+            <p class="amounts__el">25%</p>
+            <p class="amounts__el">50%</p>
+            <p class="amounts__el amounts__custom">Custom</p>
+          </article>
+        </article>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+        <article class="splitter">
+          <h3 class="splitter__heading">Number of People</h3>
+          <span class="splitter__input">
+            <img
+              src="./images/icon-person.svg"
+              alt="number of person splitting, person icon"
+            />
+            <input type="text" name="people" id="" />
+          </span>
+        </article>
 
-  Number of People
+        <article class="tips">
+          <article class="tips__split">
+            <article class="tips__text">
+              <p class="text__title">Tip Amount</p>
+              <p>/ person</p>
+            </article>
+            <p class="tips__amount">$</p>
+          </article>
 
-  Tip Amount
-  / person
+          <article class="tips__total">
+            <article class="tips__text">
+              <p class="text__title">Total</p>
+              <p>/ person</p>
+            </article>
+            <p class="total__amount">$</p>
+          </article>
 
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+          <button class="reset">Reset</button>
+        </article>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by
+          <a href="https://github.com/8n9ght" target="_blank">8n9ght</a>.
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
