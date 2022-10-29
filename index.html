@@ -11,7 +11,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script async src="./scripts/main.js"></script>
+
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
@@ -28,7 +28,7 @@
               src="./images/icon-dollar.svg"
               alt="bill amount input, dollar sign"
             />
-            <input type="text" name="billAmount" />
+            <input type="number" name="billAmount" id="billAmount" value=""/>
           </span>
         </article>
 
@@ -40,7 +40,8 @@
             <p class="amounts__el">15%</p>
             <p class="amounts__el">25%</p>
             <p class="amounts__el">50%</p>
-            <p class="amounts__el amounts__custom">Custom</p>
+            <p class="amounts__custom enabled" id="customAmountButton">Custom</p>
+            <input type="number" class="amounts__custom disabled" id="customAmountInput"/>
           </article>
         </article>
 
@@ -51,7 +52,7 @@
               src="./images/icon-person.svg"
               alt="number of person splitting, person icon"
             />
-            <input type="text" name="people" id="" />
+            <input type="number" name="people" id="peopleNubmer" />
           </span>
         </article>
 
@@ -83,5 +84,6 @@
         </div>
       </div>
     </div>
+    <script async src="./scripts/main.js"></script>
   </body>
 </html>
