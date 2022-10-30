@@ -21,63 +21,70 @@
       </header>
 
       <div class="content">
-        <article class="bill">
-          <h3 class="bill__heading">Bill</h3>
-          <span class="bill__input">
-            <img
-              src="./images/icon-dollar.svg"
-              alt="bill amount input, dollar sign"
-            />
-            <input type="number" name="billAmount" id="billAmount"  placeholder="0"/>
-          </span>
-        </article>
-
-        <article class="selector">
-          <h3 class="selector__heading">Select Tip %</h3>
-          <article class="amounts">
-            <p class="amounts__el">5%</p>
-            <p class="amounts__el">10%</p>
-            <p class="amounts__el">15%</p>
-            <p class="amounts__el">25%</p>
-            <p class="amounts__el">50%</p>
-            <p class="amounts__custom enabled" id="customAmountButton">Custom</p>
-            <input type="number" class="amounts__custom disabled" id="customAmountInput"/>
-          </article>
-        </article>
-
-        <article class="splitter">
-          <article class="splitter__top">
-            <h3 class="splitter__heading">Number of People</h3>
-            <p class="message disabled">Can't be zero</p>
-          </article>
-          <span class="splitter__input">
-            <img
-              src="./images/icon-person.svg"
-              alt="number of person splitting, person icon"
-            />
-            <input type="number" name="people" id="peopleNubmer" placeholder="0" />
-          </span>
-        </article>
-
-        <article class="tips">
-          <article class="tips__split">
-            <article class="tips__text">
-              <p class="text__title">Tip Amount</p>
-              <p>/ person</p>
+        <article class="content__full">
+          <article class="content__left">
+            <article class="bill">
+              <h3 class="bill__heading">Bill</h3>
+              <span class="bill__input">
+                <img
+                  src="./images/icon-dollar.svg"
+                  alt="bill amount input, dollar sign"
+                />
+                <input type="number" name="billAmount" id="billAmount"  placeholder="0"/>
+              </span>
             </article>
-            <p class="tips__amount">$0.00</p>
-          </article>
-
-          <article class="tips__total">
-            <article class="tips__text">
-              <p class="text__title">Total</p>
-              <p>/ person</p>
+    
+            <article class="selector">
+              <h3 class="selector__heading">Select Tip %</h3>
+              <article class="amounts">
+                <p class="amounts__el">5%</p>
+                <p class="amounts__el">10%</p>
+                <p class="amounts__el">15%</p>
+                <p class="amounts__el">25%</p>
+                <p class="amounts__el">50%</p>
+                <p class="amounts__custom enabled" id="customAmountButton">Custom</p>
+                <input type="number" class="amounts__custom disabled" id="customAmountInput"/>
+              </article>
             </article>
-            <p class="total__amount">$0.00</p>
+    
+            <article class="splitter">
+              <article class="splitter__top">
+                <h3 class="splitter__heading">Number of People</h3>
+                <p class="message disabled">Can't be zero</p>
+              </article>
+              <span class="splitter__input">
+                <img
+                  src="./images/icon-person.svg"
+                  alt="number of person splitting, person icon"
+                />
+                <input type="number" name="people" id="peopleNubmer" placeholder="0" />
+              </span>
+            </article>
           </article>
-
-          <button class="reset">Reset</button>
+  
+          <article class="tips">
+            <article class="tips__numbers">
+              <article class="tips__split">
+                <article class="tips__text">
+                  <p class="text__title">Tip Amount</p>
+                  <p>/ person</p>
+                </article>
+                <p class="tips__amount">$0.00</p>
+              </article>
+    
+              <article class="tips__total">
+                <article class="tips__text">
+                  <p class="text__title">Total</p>
+                  <p>/ person</p>
+                </article>
+                <p class="total__amount">$0.00</p>
+              </article>
+            </article>
+  
+            <button class="reset">Reset</button>
+          </article>
         </article>
+        
         <div class="attribution">
           Challenge by
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
