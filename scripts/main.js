@@ -12,10 +12,14 @@ let percentage = [];
 const billHandler = (event) => {
   if (customInput.value) {
     totalTip.innerHTML = `$${event.target.value * customInput.value}`;
-    tipPerPerson.innerHTML = `$${(
-      (event.target.value * customInput.value) /
-      people.value
-    ).toFixed(2)}`;
+    if(people.value){
+      tipPerPerson.innerHTML = `$${(
+        (event.target.value * customInput.value) /
+        people.value
+      ).toFixed(2)}`;
+    } else {
+      tipPerPerson.innerHTML = "$";
+    }
   } else if (percentage.length > 0) {
     totalTip.innerHTML = `$${event.target.value * percentage}`;
     tipPerPerson.innerHTML = `$${(
@@ -28,15 +32,23 @@ const billHandler = (event) => {
 };
 
 const splitHandler = (event) => {
-  tipPerPerson.innerHTML = `$${(
-    (bill.value * percentage) /
-    event.target.value
-  ).toFixed(2)}`;
-  if (customInput.value) {
+  if(event.target.value){
     tipPerPerson.innerHTML = `$${(
-      (bill.value * (customInput.value / 100)) /
+      (bill.value * percentage) /
       event.target.value
     ).toFixed(2)}`;
+  } else {
+    tipPerPerson.innerHTML = "$";
+  }
+  if (customInput.value) {
+    if(event.target.value){
+      tipPerPerson.innerHTML = `$${(
+        (bill.value * (customInput.value / 100)) /
+        event.target.value
+      ).toFixed(2)}`;
+    }
+  } else {
+    tipPerPerson.innerHTML = '$';
   }
 };
 
