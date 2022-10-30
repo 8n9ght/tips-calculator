@@ -1,12 +1,13 @@
 let bill = document.getElementById("billAmount");
 let people = document.getElementById("peopleNubmer");
-let tipPerPerson = document.querySelector(".tips__amount");
-let totalTip = document.querySelector(".total__amount");
-let tipPercent = document.querySelectorAll(".amounts__el");
-let button = document.querySelector(".reset");
 let customButton = document.getElementById("customAmountButton");
 let customInput = document.getElementById("customAmountInput");
-
+let tipPerPerson = document.querySelector(".tips__amount");
+let totalTip = document.querySelector(".total__amount");
+let button = document.querySelector(".reset");
+let messageError = document.querySelector(".message");
+let splitterInput = document.querySelector(".splitter__input");
+let tipPercent = document.querySelectorAll(".amounts__el");
 let percentage = [];
 
 const billHandler = (event) => {
@@ -18,7 +19,7 @@ const billHandler = (event) => {
         people.value
       ).toFixed(2)}`;
     } else {
-      tipPerPerson.innerHTML = "$";
+      tipPerPerson.innerHTML = "$0.00";
     }
   } else if (percentage.length > 0) {
     totalTip.innerHTML = `$${event.target.value * percentage}`;
@@ -27,20 +28,25 @@ const billHandler = (event) => {
       people.value
     ).toFixed(2)}`;
   } else {
-    tipPerPerson.innerHTML = "$";
+    tipPerPerson.innerHTML = "$0.00";
   }
 };
 
+if(!people.value){
+  button.disabled = true;
+}
+
 const splitHandler = (event) => {
-  if(event.target.value){
-    tipPerPerson.innerHTML = `$${(
-      (bill.value * percentage) /
-      event.target.value
-    ).toFixed(2)}`;
+  if(event.target.value == 0 || people.value.length === 0){
+    messageError.classList.remove("disabled");
+    splitterInput.classList.add("error");
   } else {
-    tipPerPerson.innerHTML = "$";
+    messageError.classList.add("disabled");
+    splitterInput.classList.remove("error");
   }
-  if (customInput.value) {
+  if(event.target.value){
+    tipPerPerson.innerHTML = `$${((bill.value * percentage) / event.target.value).toFixed(2)}`;
+  } else if(customInput.value) {
     if(event.target.value){
       tipPerPerson.innerHTML = `$${(
         (bill.value * (customInput.value / 100)) /
@@ -48,8 +54,9 @@ const splitHandler = (event) => {
       ).toFixed(2)}`;
     }
   } else {
-    tipPerPerson.innerHTML = '$';
+    tipPerPerson.innerHTML = '$0.00';
   }
+  button.disabled = false;
 };
 
 const customTipHandler = (event) => {
@@ -62,9 +69,16 @@ const customTipHandler = (event) => {
   }
 };
 
+let prevBtn = null;
+
 const tipHandler = (event) => {
   percentage = [];
   percentage.push(parseFloat(event.target.innerHTML) / 100);
+  event.target.classList.add('isClicked');
+  if(prevBtn !== null){
+    prevBtn.classList.remove('isClicked');
+  }
+  prevBtn = event.target;
   totalTip.innerHTML = `$${bill.value * percentage}`;
   if (people.value) {
     tipPerPerson.innerHTML = `$${(
@@ -84,15 +98,20 @@ const inputHandler = () => {
 const resetHandler = () => {
   bill.value = "";
   people.value = "";
-  totalTip.innerHTML = "$";
-  tipPerPerson.innerHTML = "$";
+  totalTip.innerHTML = "$0.00";
+  tipPerPerson.innerHTML = "$0.00";
   customInput.value = "";
   customButton.classList.add("enabled");
   customButton.classList.remove("disabled");
   customInput.classList.add("disabled");
   customInput.classList.remove("enabled");
   percentage = [];
+  for (let i = 0; i < tipPercent.length; i++) {
+    tipPercent[i].classList.remove('isClicked')
+  }
 };
+
+
 
 for (let i = 0; i < tipPercent.length; i++) {
   tipPercent[i].onclick = tipHandler;
