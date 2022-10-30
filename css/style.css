@@ -50,7 +50,6 @@ header{
 
 .content{
     width: 100%;
-
     background: hsl(0, 0%, 100%);
     padding: 8%;
     border-radius: 2rem 2rem 0 0;
@@ -71,6 +70,18 @@ img{
     gap: 10px;
 }
 
+.splitter__top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message{
+    font-size: .8rem;
+    color: orangered;
+}
+
 h3{
     font-size: 1rem ;
 }
@@ -84,6 +95,7 @@ h3{
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    border: .1rem solid transparent;
 }
 
 input{
@@ -96,10 +108,35 @@ input{
     font-size: inherit;
 }
 
+
+input:focus-visible{
+    outline: none;
+}
+
+.bill__input:focus-within, .splitter__input:focus-within {
+    border: hsl(172, 67%, 45%) solid .1rem;
+}
+
+#customAmountInput{
+    border: .1rem solid transparent;
+}
+
+.error{
+    border: .1rem solid orangered;
+}
+
+#customAmountInput:focus{
+    border: hsl(172, 67%, 45%) solid .1rem;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
 .amounts{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 15px;
 }
 
@@ -124,7 +161,13 @@ input{
 }
 
 .amounts__el:hover{
-    background:hsl(172, 67%, 45%);
+    background:hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+}
+
+.isClicked{
+    background:hsl(185, 41%, 84%);
     color: hsl(183, 100%, 15%);
     cursor: pointer;
 }
@@ -171,6 +214,17 @@ input{
     font-size: inherit;
     background: hsl(172, 67%, 45%);
     color: hsl(183, 100%, 15%);
+}
+
+.reset:hover{
+    cursor: pointer;
+    background: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+}
+
+.reset:disabled{
+    background: hsl(186, 14%, 43%);
+    cursor: not-allowed;
 }
 
 .disabled{

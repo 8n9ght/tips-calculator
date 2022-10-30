@@ -28,7 +28,7 @@
               src="./images/icon-dollar.svg"
               alt="bill amount input, dollar sign"
             />
-            <input type="number" name="billAmount" id="billAmount" value=""/>
+            <input type="number" name="billAmount" id="billAmount"  placeholder="0"/>
           </span>
         </article>
 
@@ -46,13 +46,16 @@
         </article>
 
         <article class="splitter">
-          <h3 class="splitter__heading">Number of People</h3>
+          <article class="splitter__top">
+            <h3 class="splitter__heading">Number of People</h3>
+            <p class="message disabled">Can't be zero</p>
+          </article>
           <span class="splitter__input">
             <img
               src="./images/icon-person.svg"
               alt="number of person splitting, person icon"
             />
-            <input type="number" name="people" id="peopleNubmer" />
+            <input type="number" name="people" id="peopleNubmer" placeholder="0" />
           </span>
         </article>
 
@@ -62,7 +65,7 @@
               <p class="text__title">Tip Amount</p>
               <p>/ person</p>
             </article>
-            <p class="tips__amount">$</p>
+            <p class="tips__amount">$0.00</p>
           </article>
 
           <article class="tips__total">
@@ -70,7 +73,7 @@
               <p class="text__title">Total</p>
               <p>/ person</p>
             </article>
-            <p class="total__amount">$</p>
+            <p class="total__amount">$0.00</p>
           </article>
 
           <button class="reset">Reset</button>
