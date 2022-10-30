@@ -61,6 +61,11 @@ const resetHandler = () => {
   people.value = "";
   totalTip.innerHTML = "$";
   tipPerPerson.innerHTML = "$";
+  customInput.value = "";
+  customButton.classList.add('enabled')
+  customButton.classList.remove('disabled')
+  customInput.classList.add('disabled')
+  customInput.classList.remove('enabled')
   percentage = [];
 };
 
